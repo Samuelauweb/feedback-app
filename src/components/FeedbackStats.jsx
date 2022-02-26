@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function FeedbackStats({ feedback }) {
-  let average = feedback.reduce((acc, cur) => {
-    return acc + cur.rating
-  }, 0) / feedback.length
+  let average =
+    feedback.reduce((acc, cur) => {
+      return acc + cur.rating
+    }, 0) / feedback.length
 
   average = average.toFixed(1).replace(/[.,]0$/, '')
 
@@ -17,7 +18,7 @@ function FeedbackStats({ feedback }) {
 }
 
 FeedbackStats.propTypes = {
-  feedback: PropTypes.array.isRequired
+  feedback: PropTypes.array.isRequired,
 }
 
 export default FeedbackStats
