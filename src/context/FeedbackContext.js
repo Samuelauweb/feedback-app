@@ -23,8 +23,8 @@ export const FeedbackProvider = ({ children }) => {
   ])
 
   const [feedbackEdit, setFeedbackEdit] = useState({
-    item: {},
-    edit: false,
+    item: {}, // when the icon is clicked, the content about that item will be put in here
+    edit: false, // when the icon is clicked, it will change to 'true', which means we are in edit mode
   })
 
   // Delete feedback
