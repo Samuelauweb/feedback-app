@@ -37,9 +37,11 @@ function App() {
               element={
                 <>
                   <FeedbackForm handleAdd={addFeedback} />
-                  <FeedbackStats feedback={feedback} />
+                  <FeedbackStats
+                  // feedback={feedback}
+                  />
                   <FeedbackList
-                    feedback={feedback}
+                    // feedback={feedback}
                     handleDelete={deleteFeedback}
                   />
                   <AboutIconLink />
