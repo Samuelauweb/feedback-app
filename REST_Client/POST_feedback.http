@@ -1,0 +1,8 @@
+POST http://localhost:5000/feedback
+content-type: application/json
+
+{
+  "id": 4,
+  "text": "New feedback item",
+  "rating": 7
+}
