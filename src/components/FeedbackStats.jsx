@@ -4,7 +4,7 @@ import FeedbackContext from '../context/FeedbackContext'
 // import PropTypes from 'prop-types'
 
 function FeedbackStats() {
-  const { feedback, setFeedback } = useContext(FeedbackContext)
+  const { feedback } = useContext(FeedbackContext)
 
   let average =
     feedback.reduce((acc, cur) => {
