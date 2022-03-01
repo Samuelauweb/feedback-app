@@ -25,8 +25,11 @@ export const FeedbackProvider = ({ children }) => {
   }
 
   // Delete feedback
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm(`Are you sure you want to delete id?`)) {
+      await fetch(`/feedback/${id}`, {
+        method: 'DELETE',
+      })
       setFeedback(feedback.filter((item) => item.id !== id))
     }
   }
@@ -41,7 +44,7 @@ export const FeedbackProvider = ({ children }) => {
       body: JSON.stringify(newFeedback),
     })
 
-    const data = response.json()
+    const data = await response.json()
 
     // newFeedback.id = uuidv4() // it can be removed because database will generate id automatically
     console.log(typeof newFeedback.id)
@@ -57,10 +60,18 @@ export const FeedbackProvider = ({ children }) => {
   }
 
   // Update feedback item
-  const updateFeedback = (id, updItem) => {
+  const updateFeedback = async (id, updItem) => {
+    const response = await fetch(`/feedback/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updItem),
+    })
+    const data = await response.json()
     // console.log(id, updItem)
     setFeedback(
-      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+      feedback.map((item) => (item.id === id ? { ...item, ...data } : item))
     )
   }
 

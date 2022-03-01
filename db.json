@@ -21,14 +21,9 @@
       "id": 4
     },
     {
-      "text": "This is new feedback 2",
-      "rating": 5,
-      "id": 5
-    },
-    {
-      "text": "This is new feedback 3",
+      "text": "This is new feedback 2 (updated await)",
       "rating": 6,
-      "id": 6
+      "id": 5
     }
   ]
 }
